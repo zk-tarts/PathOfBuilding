@@ -177,5 +177,8 @@ end)
 writeMods("../Data/BeastCraft.lua", function(mod)
 	return (mod.Id:match("Aspect")  and mod.GenerationType == 2)  -- Aspect Crafts
 end)
+writeMods("../Data/ModIncursion.lua", function(mod)
+	return mod.Id:match("Enhanced")
+end)
 
 print("Mods exported.")

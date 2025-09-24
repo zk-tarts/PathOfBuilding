@@ -595,6 +595,7 @@ end
 data.essences = LoadModule("Data/Essence")
 data.veiledMods = LoadModule("Data/ModVeiled")
 data.beastCraft = LoadModule("Data/BeastCraft")
+data.incursionMods = LoadModule("Data/ModIncursion")
 data.necropolisMods = LoadModule("Data/ModNecropolis")
 data.crucible = LoadModule("Data/Crucible")
 data.pantheons = LoadModule("Data/Pantheons")

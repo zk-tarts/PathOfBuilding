@@ -2714,6 +2714,20 @@ function ItemsTabClass:AddCustomModifierToDisplayItem()
 					return a.defaultOrder < b.defaultOrder
 				end
 			end)
+		elseif sourceId == "INCURSION" then
+			ConPrintf("temple")
+			for name, mod in pairs(self.build.data.incursionMods) do
+				t_insert(modList, {
+					label = mod.affix .. "  ^8[" .. table.concat(mod, "/") .. "]",
+					mod = mod,
+					affixType = mod.type,
+					type = "custom",
+					defaultOrder = name
+				})
+			end
+			table.sort(modList, function(a,b)
+				return a.defaultOrder < b.defaultOrder
+			end)
 		end
 	end
 	if self.displayItem.type ~= "Tincture"  then
@@ -2724,6 +2738,7 @@ function ItemsTabClass:AddCustomModifierToDisplayItem()
 			t_insert(sourceList, { label = "Essence", sourceId = "ESSENCE" })
 			t_insert(sourceList, { label = "Veiled", sourceId = "VEILED"})
 			t_insert(sourceList, { label = "Beastcraft", sourceId = "BEASTCRAFT" })
+			t_insert(sourceList, { label = "Incursion", sourceId = "INCURSION" })
 		end
 		if self.displayItem.type == "Helmet" or self.displayItem.type == "Body Armour" or self.displayItem.type == "Gloves" or self.displayItem.type == "Boots" then
 			t_insert(sourceList, { label = "Necropolis", sourceId = "NECROPOLIS"})
